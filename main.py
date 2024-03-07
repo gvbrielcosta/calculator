@@ -1,20 +1,21 @@
 class Calculator:
     
+    
     @classmethod
-    def sum(cls, a: float, b: float) -> float:
-        return a + b
+    def sum(cls, a: float, b: float) -> str:
+        return f'da soma é: {a + b}' 
     
     @classmethod
     def sub(cls, a: float, b: float) -> float:
-        return a - b
+        return f'da subtração é: {a - b}' 
     
     @classmethod
     def div(cls, a: float, b: float) -> float:
-        return a / b
+        return f'da divisão é: {a / b}' 
     
     @classmethod
     def mult(cls, a: float, b: float) -> float:
-        return a * b
+        return f'da multiplicação é: {a * b}' 
     
 def get_operation():
     
@@ -40,7 +41,7 @@ def get_operation():
            print('Você não digitou uma operação válida.')
 
 
-def get_number(position: int) -> float:
+def get_number(position: str) -> float:
     while True:
         try:
             num = float(input(f'Digite o {position} número da operação: '))
@@ -50,11 +51,11 @@ def get_number(position: int) -> float:
    
 def start():
 
-    print("Bem vindo ao programa")
+    print("Bem vindo a calculadora")
     operation = get_operation()
-    number_1 = get_number(1)
-    number_2 = get_number(2)
-    print(f'O resultado da operação é {operation(number_1, number_2)}')
+    number_1 = get_number('primeiro')
+    number_2 = get_number('segundo')
+    print(f'O resultado {operation(number_1, number_2)}')
 
 
 start()
